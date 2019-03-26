@@ -1,0 +1,97 @@
+nav ul{
+	font-family: "roboto mono",monospace;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow:hidden;
+	background-color: #333;
+}
+nav li{
+	float: right;
+}
+nav li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+nav li a:hover{
+	color: red;
+	background-color: #111;
+	
+}
+h1{
+	margin: 1px;
+	color: white;
+	font-family: "roboto mono",monospace;
+	font-size: 50px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	background-image: url("images/snakeh1.jpg");
+	border: solid 5px black;
+	background-repeat: no-repeat;
+	min-height: 408px;
+	text-align: center;
+}
+h2{
+	margin: 1px;
+	color: red;
+	font-family: "roboto mono",monospace;
+	font-size: 35px;
+	text-align: left;
+	padding-top: 20px;
+}
+body{
+	max-width: 960px;
+	margin: auto;
+}
+.contact{
+	max-width: 960px;
+	margin: auto;
+	background-color: black;
+	height: 100%;
+}
+.paragraph{
+	margin: auto;
+	font-family: "roboto mono",monospace;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+	margin-bottom: 20px;
+	background-color: silver;
+}
+
+.intro{
+	background-color: silver;
+	padding: 10px 15px 10px 15px;
+}
+iframe{
+	display: block;
+	margin: 0 auto;
+	padding: 50px 0px;
+}
+.border{
+	border-color: black;
+	border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+	margin: 20px;
+}
+img {
+	width: 75px;
+	height: 75px;
+	float: right;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+}
+p{
+	font-family: "roboto mono",monospace;
+	font-size: 20px;
+	float: left;
+}
+.codec{
+	max-width: 960px;
+	width: 960px;
+	height: 408px;
+	margin-top: 20px;
+}

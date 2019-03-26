@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Technical Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <script src="main.js"></script>
+</head>
+<body>
+    <main>
+        <div id="header" class="box">
+            <h1>- Eloquent JavaScript -</h1>
+        </div>
+        <nav id="navbar" class="box">
+            <h2>Topic of Discussion</h2>
+            <ul>
+                <a href="#section1"><li>Introduction</li></a>
+                <a href="#section2"><li>Abstraction</li></a>
+                <a href="#section3"><li>Abstracting Repetition</li></a>
+                <a href="#section4"><li>Higher Order Functions</li></a>
+                <a href="#section5"><li>Script Data Set</li></a>
+            </ul>
+        </nav>
+        <div id="main-section" class="box">
+            <div class="content">    
+                <section id="section1">
+                    <h2>Introduction</h2>
+                    <p>A large program is a costly program, and not just because of the time it takes to build. Size almost always involves complexity, and complexity confuses programmers. Confused programmers, in turn, introduce mistakes (bugs) into programs. A large program then provides a lot of space for these bugs to hide, making them hard to find.<br>
+                    Let’s briefly go back to the final two example programs in the introduction. The first is self-contained and six lines long.</p>
+                    <div class="code">
+                        <code>
+                            let total = 0, count = 1;<br>
+                            while (count <= 10) {<br>
+                                total += count;<br>
+                                count += 1;<br>
+                            }<br>
+                            console.log(total);
+                        </code> 
+                    </div>  
+                    <p>The second relies on two external functions and is one line long.</p>
+                    <div class="code">
+                        <code>console.log(sum(range(1, 10)));</code>
+                    </div>
+                    <p>Which one is more likely to contain a bug?<br>
+                        If we count the size of the definitions of sum and range, the second program is also big—even bigger than the first. But still, I’d argue that it is more likely to be correct.<br>                            
+                        It is more likely to be correct because the solution is expressed in a vocabulary that corresponds to the problem being solved. Summing a range of numbers isn’t about loops and counters. It is about ranges and sums.<br>        The definitions of this vocabulary (the functions sum and range) will still involve loops, counters, and other incidental details. But because they are expressing simpler concepts than the program as a whole, they are easier to get right.
+                    </p>
+                    <hr class="hr"> 
+                </section>
+                <section id="section2">
+                    <h2>Abstraction</h2>
+                    <p>
+                        In the context of programming, these kinds of vocabularies are usually called abstractions. Abstractions hide details and give us the ability to talk about problems at a higher (or more abstract) level.<br>
+                         As an analogy, compare these two recipes for pea soup. The first one goes like this:
+                    </p>
+                    <div class="cite">
+                        <cite>
+                            "Put 1 cup of dried peas per person into a container. Add water until the peas are well covered. Leave the peas in water for at least 12 hours. Take the peas out of the water and put them in a cooking pan. Add 4 cups of water per person. Cover the pan and keep the peas simmering for two hours. Take half an onion per person. Cut it into pieces with a knife. Add it to the peas. Take a stalk of celery per person. Cut it into pieces with a knife. Add it to the peas. Take a carrot per person. Cut it into pieces. With a knife! Add it to the peas. Cook for 10 more minutes."
+                        </cite>
+                    </div>
+                    <p>And this is the second recipe:</p>
+                    <div class="cite">
+                        <cite>
+                            "Per person: 1 cup dried split peas, half a chopped onion, a stalk of celery, and a carrot.<br>
+                            Soak peas for 12 hours. Simmer for 2 hours in 4 cups of water (per person). Chop and add vegetables. Cook for 10 more minutes."
+                        </cite>
+                    </div>
+                    <p>
+                        The second is shorter and easier to interpret. But you do need to understand a few more cooking-related words such as soak, simmer, chop, and, I guess, vegetable.<br>
+
+                        When programming, we can’t rely on all the words we need to be waiting for us in the dictionary. Thus, we might fall into the pattern of the first recipe—work out the precise steps the computer has to perform, one by one, blind to the higher-level concepts that they express.<br>
+                        
+                        It is a useful skill, in programming, to notice when you are working at too low a level of abstraction.<br>
+                    </p>
+                    <hr class="hr"> 
+                </section>
+                <section id="section3">
+                    <h2>Abstracting Repetition</h2>
+                    <p>
+                        Plain functions, as we’ve seen them so far, are a good way to build abstractions. But sometimes they fall short. It is common for a program to do something a given number of times. You can write a for loop for that, like this:
+                    </p>
+                    <div class="code">
+                        <code>
+                            for (let i = 0; i < 10; i++) {<br>
+                            console.log(i);<br>
+                        }
+                        </code>
+                    </div>
+                    <p>
+                        Can we abstract “doing something N times” as a function? Well, it’s easy to write a function that calls console.log N times.
+                    </p>
+                    <div class="code">
+                        <code>function repeatLog(n) {<br>
+                                for (let i = 0; i < n; i++) {<br>
+                                  console.log(i);<br>
+                                }<br>
+                              }
+                        </code>
+                    </div> 
+                    <p>
+                        But what if we want to do something other than logging the numbers? Since “doing something” can be represented as a function and functions are just values, we can pass our action as a function value.
+                    </p>
+                    <div class="code">
+                        <code>
+                            function repeat(n, action) {<br>
+                              for (let i = 0; i < n; i++) {<br>
+                                action(i);<br>
+                               }<br>
+                            }<br>
+                            <br>
+                            repeat(3, console.log);<br>
+                            // → 0<br>
+                            // → 1<br>
+                            // → 2
+                        </code>
+                    </div>
+                    <p>
+                        We don’t have to pass a predefined function to repeat. Often, it is easier to create a function value on the spot instead.
+                    </p>
+                    <div class="code">     
+                        <code>   
+                            let labels = [];<br>
+                            repeat(5, i => {<br>
+                              labels.push(`Unit ${i + 1}`);<br>
+                            });<br>
+                            <br>
+                            console.log(labels);<br>
+                            // → ["Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5"]
+                        </code>
+                    </div>
+                    <p>
+                         This is structured a little like a for loop—it first describes the kind of loop and then provides a body. However, the body is now written as a function value, which is wrapped in the parentheses of the call to repeat. This is why it has to be closed with the closing brace and closing parenthesis. In cases like this example, where the body is a single small expression, you could also omit the braces and write the loop on a single line.
+                    </p>
+                    <hr class="hr">
+                </section>
+                <section id="section4">
+                    <h2>Higher Order Functions</h2>
+                    <p>
+                        Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions. Since we have already seen that functions are regular values, there is nothing particularly remarkable about the fact that such functions exist. The term comes from mathematics, where the distinction between functions and other values is taken more seriously.
+                    </p>
+                    <p>
+                        Higher-order functions allow us to abstract over actions, not just values. They come in several forms. For example, we can have functions that create new functions.
+                    </p>        
+                    <div class="code">  
+                        <code>     
+                            function greaterThan(n) {<br>
+                              return m => m > n;<br>
+                            }<br>
+                            let greaterThan10 = greaterThan(10);<br>
+                            <br>
+                            console.log(greaterThan10(11));<br>
+                            // → true
+                        </code>
+                    </div>
+                    <p>
+                        And we can have functions that change other functions.
+                    </p>   
+                    <div class="code">
+                        <code>     
+                            function noisy(f) {<br>
+                              return (...args) => {<br>
+                                console.log("calling with", args);<br>
+                                let result = f(...args);<br>
+                                <br>
+                                console.log("called with", args, ", returned", result);<br>
+                                return result;<br>
+                              };<br>
+                            }<br>
+                            <br>
+                            noisy(Math.min)(3, 2, 1);<br>
+                            // → calling with [3, 2, 1]<br>
+                            // → called with [3, 2, 1] , returned 1<br>
+                        </code>
+                    </div>
+                    <p>    
+                        We can even write functions that provide new types of control flow.
+                    </p>
+                    <div class="code">
+                        <code>
+                                function unless(test, then) {<br>
+                                    if (!test) then();<br>
+                                  }<br>
+                                  <br>
+                                  repeat(3, n => {<br>
+                                    unless(n % 2 == 1, () => {<br>
+                                      console.log(n, "is even");<br>
+                                    });<br>
+                                  });<br>
+                                  // → 0 is even<br>
+                                  // → 2 is even<br>
+                        </code>
+                    </div>
+                    <p>
+                        There is a built-in array method, forEach, that provides something like a for/of loop as a higher-order function.
+                    </p>
+                    <div class="code">
+                        <code>
+                                ["A", "B"].forEach(l => console.log(l));<br>
+                                // → A<br>
+                                // → B
+                        </code>
+                    </div>                    
+                    <hr class="hr">
+                </section>
+                <section id="section5">
+                    <h2>Script Data Set</h2>
+                    <p>
+                        One area where higher-order functions shine is data processing. To process data, we’ll need some actual data. This chapter will use a data set about scripts—writing systems such as Latin, Cyrillic, or Arabic.
+                    </p>
+                    <p>
+                        Remember Unicode from Chapter 1, the system that assigns a number to each character in written language? Most of these characters are associated with a specific script. The standard contains 140 different scripts—81 are still in use today, and 59 are historic.
+                    </p>
+                    <p>        
+                        Though I can fluently read only Latin characters, I appreciate the fact that people are writing texts in at least 80 other writing systems, many of which I wouldn’t even recognize. For example, here’s a sample of Tamil handwriting:
+                    </p>
+                    <div class="img">
+                    <img src="https://eloquentjavascript.net/img/tamil.png">
+                    <article>        
+                            <em>Tamil handwriting</em>
+                    </article>
+                    </div>
+                    <p>
+                        The example data set contains some pieces of information about the 140 scripts defined in Unicode. It is available in the coding sandbox for this chapter as the SCRIPTS binding. The binding contains an array of objects, each of which describes a script.
+                    </p>
+                    <div class="code">
+                        <code>        
+                            {<br>
+                              name: "Coptic",<br>
+                              ranges: [[994, 1008], [11392, 11508], [11513, 11520]],<br>
+                              direction: "ltr",<br>
+                              year: -200,<br>
+                              living: false,<br>
+                              link: "https://en.wikipedia.org/wiki/Coptic_alphabet"<br>
+                            }
+                        </code>
+                    </div>
+                    <p>
+                        Such an object tells us the name of the script, the Unicode ranges assigned to it, the direction in which it is written, the (approximate) origin time, whether it is still in use, and a link to more information. The direction may be "ltr" for left to right, "rtl" for right to left (the way Arabic and Hebrew text are written), or "ttb" for top to bottom (as with Mongolian writing).
+                    </p>
+                    <p>                                
+                        The ranges property contains an array of Unicode character ranges, each of which is a two-element array containing a lower bound and an upper bound. Any character codes within these ranges are assigned to the script. The lower bound is inclusive (code 994 is a Coptic character), and the upper bound is non-inclusive (code 1008 isn’t). 
+                    </p>
+                    <hr class="hr">
+                </section>
+            </div>
+        </div>
+        <div>
+            <a href="#"><button>Back To Top</button></a>
+        </div>
+    </main>
+</body>
+</html>

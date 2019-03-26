@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+<body>
+    <div class="loginbox">            
+    <img class="avatar" src="http://images.pocketgamer.co.uk/artwork/na-sofgxq/image.png" alt="Avatar Image" />
+        <div class="boxT">
+            <h1>Login Here</h1>
+        </div>
+        <div class="boxL">
+            <form>
+                <p>Username</p>
+                <input type="text" name="name" placeholder="Enter Username" maxlength="30" />
+                <p>Email</p>
+                <input type="email" name="name" value="" placeholder="Enter Email" />
+                <p>Password</p>
+                <input type="password" name="name" placeholder="Enter Password" />
+            </form>
+        </div>
+        <div class="boxR">
+            <form>
+                <p>Gender</p>
+                <div class="genselect">
+                    <select name="gender">
+                        <option class="option" value="male">Male</option>
+                        <option class="option" value="female">Female</option>
+                        <option class="option" value="other">Other</option>
+                    </select>
+                </div>
+                <hr />
+                <p>Comments</p>
+                <textarea placeholder="Type your comments here..." name="comments" cols="35" rows="4"></textarea>
+                <hr />
+                <div class="radio">
+                    <p>Agree to terms</p>
+                    <div class="radiobtn">
+                        <input id="radio1" type="radio" name="agree" value="Yes" />
+                        <label for="radio1" class="radio-label">Yes</label>
+                        <input id="radio2" type="radio" name="agree" value="No" />
+                        <label for="radio2" class="radio-label">No</label>
+                    </div>
+                </div>                    
+            </form>
+        </div>
+        <div class="boxB">
+            <input type="submit" name="name" value="Login" />
+            <a href="#">Lost Your Password?</a>
+            <a href="#">New Round Here?</a>
+        </div>
+    </div>
+</body>
+</html>

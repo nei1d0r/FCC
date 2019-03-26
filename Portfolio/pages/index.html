@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!--Custom CSS-->
+	<link rel="stylesheet" href="..\css\stylesheet.css" type="style.css">
+	 	<script>
+		    var shiftWindow = function() { scrollBy(0, -55) };
+		    window.addEventListener("hashchange", shiftWindow);
+		    function load() { if (window.location.hash) shiftWindow(); }
+  		</script>
+	
+    <title>Portfolio</title>
+  </head>
+<body onload="load()" class="bg-secondary">
+
+<!--Navbar-Top-->
+<div id="top" class="container-fluid bg-light">
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+	  <a class="navbar-brand" href="#">My<span class="text-danger"> Portfolio</span> Page</a>
+	</nav>
+</div>
+
+<!--Carousel-->
+<div class="container-fluid bg-dark" style="padding: 0px;">
+	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+	  <div class="carousel-inner">
+		<div class="carousel-item active">
+		  <img class="d-block w-100" src="..\images\keyboard.jpg" style="max-height:350px; min-height: 350px;" alt="First slide">
+		</div>
+		<div class="carousel-item">
+		  <img class="d-block w-100" src="..\images\code.png" style="max-height:350px; min-height: 350px;" alt="Second slide">
+		</div>
+	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="false"></span>
+		<span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="false"></span>
+		<span class="sr-only">Next</span>
+	  </a>
+	</div>
+</div>
+
+<!--Navbar-->
+<div class="container-fluid sticky-top bg-dark">
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+	  <a class="navbar-brand" href="#"><span class="text-danger"></span></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: center;">
+		<div>
+			<ul class="navbar-nav mr-auto list-unstyled">
+			  <li class="nav-item active">
+				<a class="nav-link" href="#aboutme">About Me<span class="sr-only">(current)</span></a>
+			  </li>
+			    <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  Projects
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					  <a class="dropdown-item" href="#snake">Metal Gear Solid</a>
+					  <a class="dropdown-item" href="#AnP">Anatomy and physiology</a>
+					  <a class="dropdown-item" href="#placeholder">coming soon</a>
+					  <div class="dropdown-divider"></div>
+					  <a class="dropdown-item" href="#top">Back to top</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	  </div>
+	</nav>
+</div>
+
+	
+<!--Skills-->			
+<div class="container">
+	<div class="row text-center" style="padding:50px; justify-content: center;">				
+		  <div class="col-sm-3">
+			<img class="rounded" src="..\images\html.png" alt="HTML brackets symbol" width="120" height="120"
+			style="border: 5px solid #111; margin: 2px; padding: 2px;" >
+		 </div><!-- /.col-sm-3 -->
+		 <div class="col-sm-3">
+			<img class="rounded" src="..\images\css.png" alt="CSS brand logo" width="120" height="120"
+			style="border: 5px solid #222; margin: 2px; padding: 2px;">
+		  </div><!-- /.col-sm-3 -->
+		 <div class="col-sm-3">
+			<img class="rounded" src="..\images\js.png" alt="JavaScript brand logo" width="120" height="120"
+			style="border: 5px solid #333; margin: 2px; padding: 2px;">
+		</div><!-- /.col-sm-3 -->
+		<div class="col-sm-3">
+			<img class="rounded" src="..\images\python.png" alt="Python brand logo" width="120" height="120"
+			style="border: 5px solid #444; margin: 2px; padding: 2px;">
+		</div><!-- /.col-sm-3 -->
+	</div>
+</div>
+
+<!--About Me-->
+<div id="aboutme" class="container bg-secondary" style="font-size: 1.25em">
+	<h1 style="text-align: center;">About Me</h1>
+	<p class="lead">Hi I am Neildor and I am a lecturer at my local university teaching health sciences. I am a digital enthusiast and this manifests itself in my enthusiasm towards technology enhanced learning. I have been working in partnership with the development team at Microsoft to provide feedback for Microsoft Teams in terms of its use as a higher education virtual learning environment, and this has been very successful so far.</p>
+	<p>Over the last few years i have been trying to increase my own digital literacy, which started off being relational database software, namely access. Since then i have developed an interest in manipulating data, which led me to Pyhton. I have been learning the ropes of python for about 18 months and have a reasonable grasp of it's core concepts. My latest interest is, whilst still including all of the above, webdevelopment. as this will provide a great tool for disseminating key course information to my students, in a ubiquitous environment, whilst simultaneously addressing accessibility needs.</p>
+</div>	
+
+<!--Portfolio featurette-->
+
+<!--Metal Gear Solid-->
+<br>
+<div class="container">
+	<h1 style="text-align: center;">Projects</h1>
+	<hr id="snake" class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h3 class="featurette-heading">Metal Gear Solid: <span class="text-white">Tribute</span></h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis 
+			euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			<p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+			euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
+			ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta 
+			felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, 
+			tellus ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta 
+			felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, 
+			tellus ac cursus commodo.</p>
+			</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-fluid mx-auto" src="..\Images\snake.jpg" alt="Generic placeholder image"
+			style="box-shadow: #555 6px 6px;">
+		</div>
+	</div>
+</div>
+<!--Anatomy and Physiology-->
+
+<div class="container">
+	<hr id="AnP" class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h3 class="featurette-heading">Anatomy and Physiology: <span class="text-white">for HSC</span></h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis 
+			euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			<p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+			euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
+			ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta 
+			felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, 
+			tellus ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta 
+			felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, 
+			tellus ac cursus commodo.</p>
+			</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-fluid mx-auto" src="..\Images\AnP.jpg" alt="Generic placeholder image" 
+			style="box-shadow: #555 6px 6px;">
+		</div>
+	</div>
+</div>
+<!--Placeholder-->
+
+<div class="container">
+	<hr id="placeholder" class="featurette-divider">
+	<div class="row featurette">
+		<div class="col-md-7">
+			<h3 class="featurette-heading">Placeholder: <span class="text-white">coming soon</span></h2>
+			<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis 
+			euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+			<p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+			euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
+			ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta 
+			felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, 
+			tellus ac cursus commodo. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta 
+			felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, 
+			tellus ac cursus commodo.</p>
+			</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-fluid mx-auto" src="..\Images\placeholder.png" alt="Generic placeholder image" 
+			style="box-shadow: #555 6px 6px;">
+		</div>
+	</div>
+</div>
+<!--Footer-->
+<footer class="container-fluid bg-dark" style="margin-top: 20px;">
+	<nav class="navbar navbar-dark bg-dark" style="max-height: 50px;">
+	  <span class="navbar-text align-self-start" style="border: 0px;">
+		Neildor<span class="text-danger"><sup>&copy</sup></span> 2018
+	  </span>
+	 	<div style="padding-right: 10px;">
+		  	<a href="https://twitter.com/Nei1dor" target="_blank"><img src="..\Images\twitter.png" style="height: 46px; width: 40px;"></a>
+	  		<a href="http://www.linkedin.com/in/neil-davis-562a88114" target="_blank"><img src="..\images\linkedin.png" style="height: 37px; width: 35px;"></a>
+  		</div>
+	</nav> 
+</footer>
+		
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

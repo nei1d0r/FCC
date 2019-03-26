@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	<link rel="stylesheet" href="..\css\stylesheet.css" type="style.css">
+    <title>Forms</title>
+  </head>
+
+
+  <body>
+  
+  <!--Username password and comments box-->
+	<form action="http://www.example.com/subscribe.php" method="get">
+		<p>username:</p>
+		<input type="text" name ="username" size="15" max-length="3">
+		<p>password</p>
+		<input type="password" name ="password" size="15" max-length="3">
+		<p>What kind of eggs do you like?</p>
+		<textarea name="comment" cols="20" rows="4">Enter your comment...</textarea> <!--Do not use rows and cols... use CSS!-->		
+	</form>
+	
+	<!--radio buttons and check box-->
+	<form action="http://www.example.com/subscribe.php" method="get">
+		<p>please select your favourite food</p>
+			<br>
+			<input type="radio" name="food" value="spam"> spam
+			<input type="radio" name="food" value="eggs"> eggs
+			<input type="radio" name="food" value="chips"> chips
+		</p>
+		<br>
+		<p>please select your favourite sauce(s)</p>
+			<br>
+			<input type="checkbox" name="food" value="ketchup"> ketchup
+			<input type="checkbox" name="food" value="brown"> brown
+			<input type="checkbox" name="food" value="curry"> curry
+		</p>
+		
+	<!--Dropdown lists and multi check boxes-->
+	
+	</form>
+	
+  
+  
+  </body>
+  
+</html>
